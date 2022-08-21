@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Interview_Schedule_Management.Models.Job>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<html>
+    <head>
+        <title>HR Home</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="float-right">
+                <h4 class="text-center">Welcome @TempData["hr_name"]!</h4>
+                <h5 class="text-center">Your HR ID is: @TempData["ID"]</h5>
+                <a class="btn btn-primary" asp-action="AddNewJobs" asp-controller="HR">ADD NEW JOB</a>
+                <a class="btn btn-danger align-content-end" asp-action="Index" asp-controller="Home">LOGOUT</a>
+            </div>
+            <div>
+                 <br />
+                <table class="table table-success table-striped">
+                   <thead>
+                       <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">JOB ID</th>
+                        <th scope="col">COMPANY</th>
+                        <th scope="col">VACANCY</th>
+                        <th scope="col">EXP</th>
+                        <th scope="col">DOMAIN</th>
+                        <th scope="col">CLOSING</th>
+                        <th scope="col">PRIORITY</th>
+                        <th scope="col">INT TYPE</th>
+                        <th scope="col">VIEW APPLICANTS</th>
+                        <th scope="col">EDIT</th>
+                        <th scope="col">DELETE</th>
+                       </tr>
+                  </thead>
+                  <tbody>
+                      
+                        @foreach(var d in Model)
+                        {
+                            <tr>
+                            <th scope="row">@d.JOB_ID</th>
+                            <td>@d.REQ_ID</td>
+                            <td>@d.COMPANY_NAME</td>
+                            <td>@d.REQ_VAC</td>
+                            <td>@d.REQ_EXP</td>
+                            <td>@d.DOMAIN</td>
+                            <td>@d.CLOSING_DATE</td>
+                            <td>@d.PRIORITY</td>
+                            <td>@d.INT_TYPE</td>
+                            <td><a class="btn btn-success" asp-action="HRApplicantView" asp-controller="HR" asp-route-id="@d.JOB_ID">APPLICANTS</a></td>
+                            <td><a class="btn btn-info" asp-controller="HR" asp-action="EditJob" asp-route-id="@d.JOB_ID">EDIT</a></td>
+                            <td><a class="btn btn-danger" asp-controller="HR" asp-action="DeleteJob" asp-route-id="@d.JOB_ID">DELETE</a></td>
+                            </tr>
+                        }
+                      
+                  </tbody>
+    
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

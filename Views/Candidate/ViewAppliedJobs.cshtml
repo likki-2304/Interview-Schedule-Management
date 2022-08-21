@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Interview_Schedule_Management.Models.AspirantApplication>
+@using Interview_Schedule_Management.Data;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <h4 class="text-center">Your applied jobs!</h4>
+    <br />
+    <div>
+        <table class="table table-success">
+            <thead>
+                <tr>
+                    <th scope="col">JOB ID</th>
+                    <th scope="col">COMPANY NAME</th>
+                    <th scope="col">DOMAIN</th>
+                    <th scope="col">STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach(var d in Model)
+                {
+                    <tr>
+                        <td scope="row">@d.APP_REFF_ID</td>
+                        <td>
+                            @{
+                                ApplicationContext context = new ApplicationContext();
+                                var test = context.Jobs.SingleOrDefault(x => x.JOB_ID == d.APP_REFF_ID);
+                                string companyName = test.COMPANY_NAME;
+                                string domainName = test.DOMAIN;
+                            }
+                             @companyName
+                        </td>
+                        <td>@domainName</td>
+                        <td>@d.INT_STAT</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

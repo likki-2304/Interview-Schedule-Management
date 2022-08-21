@@ -1,0 +1,52 @@
+﻿@model Interview_Schedule_Management.Models.Job
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <h3 class="align-content-md-center"></h3>
+    <form method="post" asp-action="EditJob">
+        <div class="mb-3">
+            <label for="reqId" class="form-label">Requirment ID</label>
+            <input type="number" asp-for="REQ_ID" class="form-control" id="reqId">
+            <input type="hidden" asp-for="JOB_ID" />
+            <input type="hidden" asp-for="HR_ID" />
+        </div>
+@*        <div class="mb-3">
+            <label class="form-label">HR ID</label>
+            <input type="number" asp-for="HR_ID" class="form-control" id="hrid"/>
+        </div>*@
+        <div class="mb-3">
+            <label class="form-label">Company Name</label>
+            <input type="text" asp-for="COMPANY_NAME" class="form-control" id="compname"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Vacant Positions</label>
+            <input type="number" asp-for="REQ_VAC" class="form-control" id="reqvac"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Required Experience</label>
+            <input type="number" asp-for="REQ_EXP" class="form-control" id="reqexp"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Domain</label>
+            <input type="text" asp-for="DOMAIN" class="form-control" id="domain"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Closing Date</label>
+            <input type="date" asp-for="CLOSING_DATE" class="form-control" id="cdate"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Priority</label>
+            <input type="text" asp-for="PRIORITY" class="form-control" id="prio"/>
+        </div>
+        <div class="sm-3">
+            <label class="form-label">Interview Type</label>
+            <input type="text" asp-for="INT_TYPE" class="form-control" id="inttype"/>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+</div>

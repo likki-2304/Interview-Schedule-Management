@@ -1,0 +1,24 @@
+﻿@model Interview_Schedule_Management.Models.Admin
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <form class="form" method="post" asp-action="AddAdmin">
+        <div class="mb-3">
+            <label for="uname">USERNAME</label>
+            <input type="text" asp-for="AD_Username" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="adpass">PASSWORD</label>
+            <input type="text" asp-for="AD_Password" />
+        </div>
+        <div class="mb-3">
+            <label for="adpass">DEPARTMENT</label>
+            <input type="text" asp-for="AD_Department" />
+        </div>
+        <input type="submit" class="btn btn-success" />
+    </form>
+</div>

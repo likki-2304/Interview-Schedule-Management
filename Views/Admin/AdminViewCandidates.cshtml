@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Interview_Schedule_Management.Models.Candidate>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <table class="table table-primary table-striped">
+         <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">DOB</th>
+                        <th scope="col">GENDER</th>
+                        <th scope="col">PHONE</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">DELETE</th>
+                      </tr>
+         </thead>
+         <tbody>
+                      
+                        @foreach(var d in Model)
+                        {
+                            <tr>
+                            <th scope="row">@d.C_ID</th>
+                            <td>@d.C_FNAME @d.C_LNAME</td>
+                            <td>@d.C_DOB</td>
+                            <td>@d.C_GENDER</td>
+                            <td>@d.C_PHONE</td>
+                            <td>@d.C_EMAIL</td>
+                            <td><a class="btn btn-danger" asp-controller="Admin" asp-action="DeleteCandidate" asp-route-id="@d.C_ID">DELETE</a></td>
+                     
+                            </tr>
+                        }
+                      
+                  </tbody>
+    </table>
+</div>

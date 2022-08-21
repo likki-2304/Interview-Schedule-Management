@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Interview_Schedule_Management.Models.Job>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="conatiner">
+    <h4 class="text-center">Welcome @TempData["username"] !</h4>
+    <h5 class="text-center">Your Candidate ID is: @TempData["c_id"]</h5>
+    <a class="btn btn-danger mb-3" asp-action="Index" asp-controller="Home">Log Out</a>
+    <a class="btn btn-info mb-3" asp-action="ViewAppliedJobs" asp-controller="Candidate">View Application Status</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">JOB ID</th>
+                <th scope="col">REQ ID</th>
+                <th scope="col">COMPANY NAME</th>
+                <th scope="col">VACANCIES</th>
+                <th scope="col">EXP</th>
+                <th scope="col">DOMAIN</th>
+                <th scope="col">CLOSING DATE</th>
+                <th scope="col">APPLY NOW!</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var d in Model)
+            {
+                <tr>
+                    <th scope="row">@d.JOB_ID</th>
+                    <td>@d.REQ_ID</td>
+                    <td>@d.COMPANY_NAME</td>
+                    <td>@d.REQ_VAC</td>
+                    <td>@d.DOMAIN</td>
+                    <td>@d.CLOSING_DATE</td>
+                    <td>@d.CLOSING_DATE</td>
+                    <td><a class="text-success" asp-action="ApplyJob" asp-controller="Candidate" asp-route-id="@d.JOB_ID" >Apply Here!</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<header class="masthead bg-light text-white text-center">
+    <h4 class="text-center text-primary">Welcome @TempData["ADname"] ! Your ADMIN ID is @TempData["ADID"]</h4>
+    <div class="container d-flex align-items-center flex-column">
+        <a class="btn btn-primary btn-md" asp-action="AdminPanel" asp-controller="Admin">Admin Panel</a>
+        <br />
+        <a class="btn btn-info" asp-action="AdminViewCandidates" asp-controller="Admin">View All Candidates</a>
+        <br />
+        <a class="btn btn-primary" asp-action="ViewAllJobs" asp-controller="Admin" >View Jobs</a>
+        <br />
+        <a class="btn btn-info" asp-action="AdminViewHR" asp-controller="Admin">View HRs</a>
+        <br />
+        <a class="btn btn-danger" asp-action="Index" asp-controller="Home">Log Out</a>
+    </div>
+</header>

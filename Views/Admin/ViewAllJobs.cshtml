@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Interview_Schedule_Management.Models.Job>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container">
+    <table class="table table-primary table-striped">
+         <thead>
+                      <tr>
+                        <th scope="col">JOB ID</th>
+                        <th scope="col">HR ID</th>
+                        <th scope="col">REQ ID</th>
+                        <th scope="col">COMPANY NAME</th>
+                        <th scope="col">REQ VAC</th>
+                        <th scope="col">REQ EXP</th>
+                        <th scope="col">DOMAIN</th>
+                        <th scope="col">CLOSING DATE</th>
+                        <th scope="col">PRIORITY</th>
+                        <th scope="col">APPLICANTS</th>
+                      </tr>
+         </thead>
+         <tbody>
+                      
+                        @foreach(var d in Model)
+                        {
+                            <tr>
+                            <th scope="row">@d.JOB_ID</th>
+                            <td>@d.HR_ID</td>
+                            <td>@d.REQ_ID</td>
+                            <td>@d.COMPANY_NAME</td>
+                            <td>@d.REQ_VAC</td>
+                            <td>@d.REQ_EXP</td>
+                            <td>@d.DOMAIN</td>
+                            <td>@d.CLOSING_DATE</td>
+                            <td>@d.PRIORITY</td>
+                            <td><a class="btn btn-info" asp-controller="Admin" asp-action="ApplicantView" asp-route-id="@d.JOB_ID">APPLICANTS</a></td>
+                     
+                            </tr>
+                        }
+                      
+                  </tbody>
+    </table>
+</div>

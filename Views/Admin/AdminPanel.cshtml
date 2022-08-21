@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Interview_Schedule_Management.Models.Admin>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container bg-light">
+    <div>
+        <a class="btn btn-success m-d-3 md-3" asp-action="AddAdmin" asp-controller="Admin">ADD NEW ADMIN</a>
+    </div>
+
+    <div>
+        <table class="table table-info table-striped md-3">
+                   <thead>
+                       <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">USERNAME</th>
+                        <th scope="col">PASSWORD</th>
+                        <th scope="col">DEPARTMENT</th>
+                        @*<th scope="col">EDIT</th>*@
+                        <th scope="col">DELETE</th>
+                       </tr>
+                  </thead>
+                  <tbody>
+                      
+                        @foreach(var d in Model)
+                        {
+                            <tr>
+                            <th scope="row">@d.AD_ID</th>
+                            <td>@d.AD_Username</td>
+                            <td>@d.AD_Password</td>
+                            <td>@d.AD_Department</td>
+                           
+                            <td><a class="btn btn-danger" asp-controller="Admin" asp-action="DeleteAdmin" asp-route-id="@d.AD_ID">DELETE</a></td>
+                            </tr>
+                        }
+                      
+                  </tbody>
+    
+         </table>
+    </div>
+</div>

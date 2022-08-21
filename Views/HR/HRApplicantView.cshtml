@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Interview_Schedule_Management.Models.AspirantApplication>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="conatiner">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">APPLICANT ID</th>
+                <th scope="col">APPLICANT NAME</th>
+                <th scope="col">CANDIDATE ID</th>
+                <th scope="col">JOB ID</th>
+                <th scope="col">QUALIFICATION</th>
+                <th scope="col">INTERVIEW TYPE</th>
+                <th scope="col">INTERVIEW STATUS</th>
+                <th scope="col">HR FEEDBACK</th>
+                <th scope="col">FEEDBACK</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var d in Model)
+            {
+                <tr>
+                    <th scope="row">@d.APP_ID</th>
+                    <td>@d.APP_NAME</td>
+                    <td>@d.APP_C_ID</td>
+                    <td>@d.APP_REFF_ID</td>
+                    <td>@d.APP_QUALI</td>
+                    <td>@d.APP_INT_TYPE</td>
+                    <td>@d.INT_STAT</td>
+                    <td>@d.INT_HR_MARKS</td>
+                    <td><a class="text-success" asp-action="EditAspirants" asp-controller="HR" asp-route-id="@d.APP_ID" >Feedback Report</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

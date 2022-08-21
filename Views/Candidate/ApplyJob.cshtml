@@ -1,0 +1,50 @@
+﻿@model Interview_Schedule_Management.Models.AspirantApplication
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <h3 class="align-content-center">Apply Now!</h3>
+    
+    <form method="post" asp-action="ApplyJob">
+        <div class="mb-3">
+             <label for="apname" class="form-label">Applicant Name</label>
+             <input type="text" asp-for="APP_NAME" class="form-control"/>
+        </div>
+        <div class="mb-3">
+             <label for="aid" class="form-label">Applicant ID</label>
+             <input type="number" asp-for="APP_C_ID" class="form-control"/>
+        </div>
+        <div class="mb-3">
+             <label for="apexp" class="form-label">Experience</label>
+             <input type="number" asp-for="APP_EXP" class="form-control"/>
+        </div>
+        <div class="mb-3">
+             <label for="refid" class="form-label">Job ID</label>
+             <input type="number" asp-for="APP_REFF_ID" class="form-control"/>
+        </div>
+        <div class="mb-3">
+             <label for="apname" class="form-label mr-3">Qualification:</label>
+             
+             <div class="form-check form-check-inline">
+                     <input class="form-check-input" type="radio" asp-for="APP_QUALI" id="inlineRadio1" value="Bachelors">
+                     <label class="form-check-label" for="inlineRadio1">Bachelors</label>
+             </div>
+             <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" asp-for="APP_QUALI" id="inlineRadio2" value="Masters">
+                    <label class="form-check-label" for="inlineRadio2">Masters</label>
+             </div>
+             <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" asp-for="APP_QUALI" id="inlineRadio2" value="Doctorate">
+                    <label class="form-check-label" for="inlineRadio2">Doctorate</label>
+             </div>
+             <input type="hidden" asp-for="APP_INT_TYPE" />
+             <input type="hidden" asp-for="INT_STAT" />
+             <input type="hidden" asp-for="INT_HR_MARKS" />
+        </div>
+        <input type="submit" class="btn btn-primary" value="Apply" />
+
+    </form>
+</div>
